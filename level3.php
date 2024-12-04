@@ -1,6 +1,6 @@
 <?php
 // Définir un cookie côté serveur
-setcookie("password", "FLAG{cookie_secret_123}", time() + 3600, "/"); // Cookie valide pendant 1 heure
+setcookie("password", "tropfort", time() + 3600, "/"); // Cookie valide pendant 1 heure
 ?>
 
 <!DOCTYPE html>
