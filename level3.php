@@ -42,10 +42,6 @@ setcookie("password", "tropfort", time() + 3600, "/"); // Cookie valide pendant 
     <h1>Bienvenue au CTF - Niveau 3</h1>
     <p>Trouvez le mot de passe caché pour terminer le défi.</p>
 
-    <div class="hint">
-        <p>Indice : Le mot de passe est caché quelque part... peut-être dans un cookie ?</p>
-    </div>
-
     <!-- Formulaire pour soumettre le mot de passe -->
     <form method="POST" action="">
         <input type="text" name="motDePasse" placeholder="Entrez le mot de passe ici" required>
