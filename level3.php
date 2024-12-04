@@ -52,7 +52,7 @@ setcookie("password", "tropfort", time() + 3600, "/"); // Cookie valide pendant 
     // Vérifier si le mot de passe soumis est correct
     if ($_SERVER["REQUEST_METHOD"] === "POST") {
         if (isset($_COOKIE["password"]) && $_POST["motDePasse"] === $_COOKIE["password"]) {
-            echo "<script>alert('Félicitations ! Vous avez terminé le CTF !'); window.location.href = 'victory.php';</script>";
+            echo "<script>alert('Félicitations ! Vous avez terminé le CTF !'); window.location.href = 'congrat456.html';</script>";
         } else {
             echo "<p style='color: red;'>Mot de passe incorrect. Essayez encore !</p>";
         }
