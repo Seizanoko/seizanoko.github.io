@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CTF Niveau 2</title>
+    <title>CTF Niveau 3</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -13,13 +13,6 @@
         }
         h1 {
             color: #333;
-        }
-        .hidden {
-            display: none;
-        }
-        .hint {
-            margin-top: 20px;
-            color: #888;
         }
         button {
             margin-top: 20px;
@@ -34,13 +27,49 @@
         button:hover {
             background-color: #0056b3;
         }
+        .hint {
+            margin-top: 20px;
+            color: #888;
+        }
     </style>
     <script>
+        document.cookie = "password=" + token() + "; path=/;";
+
+        function verifierMotDePasse() {
+            const motDePasse = document.getElementById("motDePasse").value;
+
+            const motDePasseCorrect = lireCookie("password");
+
+            if (motDePasse === motDePasseCorrect) {
+                alert("Félicitations ! Vous avez terminé le CTF !");
+                window.location.href = "victory.html";
+            } else {
+                alert("Mot de passe incorrect. Essayez encore !");
+            }
+        }
+
+        function token() {
+            return Math.random().toString(36).substr(2); 
+        };
+
+        function lireCookie(nom) {
+            const cookies = document.cookie.split("; ");
+            for (let cookie of cookies) {
+                const [cle, valeur] = cookie.split("=");
+                if (cle === nom) {
+                    return valeur;
+                }
+            }
+            return null;
+        }
     </script>
 </head>
 <body>
-    <h1>Niveau 3</h1>
+    <h1>Bienvenue au CTF - Niveau 3</h1>
     <p>Facile non ?</p>
-    <a href="https://seizanoko.github.io/level3.php"> click ici </a>
+
+    <!-- Formulaire de mot de passe -->
+    <input type="text" id="motDePasse" placeholder="Entrez le mot de passe ici">
+    <button onclick="verifierMotDePasse()">Valider</button>
 </body>
 </html>
