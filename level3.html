@@ -33,30 +33,28 @@
         }
     </style>
     <script>
-        document.cookie = "password=" + token() + "; path=/;";
+        document.cookie = "p=" + b() + "; path=/;";
 
-        function verifierMotDePasse() {
+        function a() {
             const motDePasse = document.getElementById("motDePasse").value;
 
-            const motDePasseCorrect = lireCookie("password");
-
-            if (motDePasse === motDePasseCorrect) {
+            if (motDePasse === c("p")) {
                 alert("Félicitations ! Vous avez terminé le CTF !");
-                window.location.href = "victory.html";
+                window.location.href = "congrat456.html";
             } else {
                 alert("Mot de passe incorrect. Essayez encore !");
             }
         }
 
-        function token() {
+        function b() {
             return Math.random().toString(36).substr(2); 
         };
 
-        function lireCookie(nom) {
-            const cookies = document.cookie.split("; ");
-            for (let cookie of cookies) {
-                const [cle, valeur] = cookie.split("=");
-                if (cle === nom) {
+        function c(n) {
+            const cs = document.cookie.split("; ");
+            for (let c of cs) {
+                const [cle, valeur] = c.split("=");
+                if (cle === n) {
                     return valeur;
                 }
             }
@@ -70,6 +68,6 @@
 
     <!-- Formulaire de mot de passe -->
     <input type="text" id="motDePasse" placeholder="Entrez le mot de passe ici">
-    <button onclick="verifierMotDePasse()">Valider</button>
+    <button onclick="a()">Valider</button>
 </body>
 </html>
